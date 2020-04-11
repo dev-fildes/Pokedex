@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+body{
+  background-color: #eee;
+}
+
+.spriteContainer {
+  background-color: #fff;
+  padding:20px;
+  border:1px solid #bbb;
+  margin:0 10px 10px 0;
+  display:inline-block;
+  text-align: center;
+}
+.spriteContainer img {
+  display:block;
+}
