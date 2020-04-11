@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const PokemonList = ({ pokemon }) => {
 
+let pokemonTile = pokemon.map(poke => {
+  return(
+    <Fragment>
+      {poke}
+        <br/>
+    </Fragment>
+  )
+})
+
   return(
     <div>
-    {pokemon.map(p => (
-      <div key={p.name}>
-        {p}
-      </div>
-    ))}
+  {pokemonTile}
     </div>
   )
 }

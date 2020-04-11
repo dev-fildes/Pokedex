@@ -6,12 +6,12 @@ import Pagination from './Pagination'
 import Search from '../Search/Search'
 
 const Index = (props) => {
-  const [pokemon, setPokemon] = useState([])
-  const [currentPage, setCurrentPage] = useState(`https://pokeapi.co/api/v2/pokemon/`)
-  const [nextPage, setNextPage] = useState()
-  const [prevPage, setPrevPage] = useState()
-  const [loading, setLoading] = useState(true)
-  const [searchValue, setSearchValue] = useState("");
+  const POKE_API = `https://pokeapi.co/api/v2/pokemon`
+  const [pokemon, setPokemon] = useState([]);
+  const [currentPage, setCurrentPage] = useState(POKE_API);
+  const [nextPage, setNextPage] = useState();
+  const [prevPage, setPrevPage] = useState();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true)
@@ -28,7 +28,7 @@ const Index = (props) => {
     return() => cancel()
   }, [currentPage])
 
-  if(loading) return "Loading.."
+  if(loading > (5)) return "Loading.."
 
   const loadNextPage = () => {
     setCurrentPage(nextPage)
@@ -37,9 +37,9 @@ const Index = (props) => {
     setCurrentPage(prevPage)
   }
 
-
     return(
       <div>
+        <Search api={POKE_API} />
         <PokemonList pokemon={pokemon} />
         <Pagination
           next={nextPage ? loadNextPage : null}
