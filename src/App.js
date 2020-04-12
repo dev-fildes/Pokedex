@@ -1,12 +1,16 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import Home from './Components/Home'
+import Home from './Components/Home.js'
+import Result from './Search/Result'
 
 export const App = (props) => {
   return (
     <BrowserRouter>
-      <Route exact path="/" component={Home} />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/:pokemon" component={Result} />
+      </Switch>
     </BrowserRouter>
   )
 }
