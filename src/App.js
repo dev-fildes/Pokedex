@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Home from './Components/Home.js'
+import Home from './Components/Home'
 import Result from './Search/Result'
 
 export const App = (props) => {

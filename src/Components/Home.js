@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
 
-import Result from '../Search/Result.js'
+import Result from '../Search/Result'
 import PokemonList from './PokemonList'
 
 const Home = (props) => {
@@ -35,9 +34,10 @@ const Home = (props) => {
     })
   }
 
-  const pokeData = pokemon.map(poke => {
+  const resultPass = pokemon.map(poke => {
+    
     return(
-      <Result data={poke} />
+      <Result key={poke.id} data={poke} id={poke.name} />
     )
   })
 
@@ -62,9 +62,10 @@ const Home = (props) => {
           type="submit"/>
         </form>
       </nav>
-      {pokeData}
+
+      {resultPass}
       {pokemonIndex}
-        </div>
+    </div>
       );
     };
 

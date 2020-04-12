@@ -5,7 +5,7 @@ import PokemonTile from './PokemonTile'
 import Pagination from './Pagination'
 
 const PokemonList = (props) => {
-  const POKE_API = 'https://pokeapi.co/api/v2/pokemon'
+  const POKE_API = props.api
   const [pokemon, setPokemon] = useState([]);
   const [currentPage, setCurrentPage] = useState(POKE_API);
   const [nextPage, setNextPage] = useState();

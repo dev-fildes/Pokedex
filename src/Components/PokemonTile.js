@@ -1,11 +1,11 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
-const PokemonTile = (props) => {
-  let { name, url } = props;
+const PokemonTile = ( {name, url} ) => {
   const [sprite, setSprite] = useState('')
   const [pokeData, setPokeData] = useState([])
 
-  useEffect(() =>{
+  useEffect(() => {
     fetch(url)
     .then(response => {
       if(response.ok) {
@@ -26,24 +26,12 @@ const PokemonTile = (props) => {
     })
   }, [])
 
-  const pokeInfo = pokeData.map(info => {
-    info.types.map(item => {
-      debugger
-      return(
-        <Fragment>
-        {item.type.name}
-        </Fragment>
-      )
-    })
-  })
-
 
   return(
-    <div className="spriteContainer">
-    <img src={sprite} />
-    {name}
-    {pokeInfo}
-    </div>
+      <div className="spriteContainer">
+        <img src={sprite} alt={pokeData.name}/>
+        {name}
+      </div>
   )
 }
 

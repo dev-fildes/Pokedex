@@ -37,3 +37,23 @@ code {
 .navbar {
   background-color:rgb(223, 228, 234);
 }
+.result-container {
+  margin:30px auto;
+  background-color: #f6f6f6;
+  width:400px;
+  padding:10px;
+  text-align: center;
+  border-radius: 5px;
+}
+.poke-sprite {
+  background-color:rgb(223, 228, 234);
+  border-radius:150px;
+  margin:10px;
+  text-align: center;
+}
+.poke-name {
+  text-transform: capitalize;
+  text-align: center;
+  font-weight:bold;
+  margin-bottom:10px;
+}
