@@ -48,22 +48,24 @@ const Home = (props) => {
 
   return (
     <div>
-      hi
-      <form onSubmit={handleSubmit}>
-        <input
-          type="Search"
-          placeholder="Search Pokemon.."
-          value={search}
-          onChange={event => setSearch(event.target.value)}
-        />
-        <input
-          type="Submit"
-        />
-      </form>
+      <nav className="navbar navbar-light">
+        <a className="navbar-brand" href="/">Devadex</a>
+        <form className="form-inline" onSubmit={handleSubmit}>
+          <input
+            className="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            value={search}
+            onChange={event => setSearch(event.target.value)}/>
+          <input
+            className="btn btn-outline-success my-2 my-sm-0"
+          type="submit"/>
+        </form>
+      </nav>
       {pokeData}
       {pokemonIndex}
-    </div>
-  );
-};
+        </div>
+      );
+    };
 
-export default Home;
+    export default Home;

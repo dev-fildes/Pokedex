@@ -5,7 +5,7 @@ import PokemonTile from './PokemonTile'
 import Pagination from './Pagination'
 
 const PokemonList = (props) => {
-  let POKE_API = props.api
+  const POKE_API = 'https://pokeapi.co/api/v2/pokemon'
   const [pokemon, setPokemon] = useState([]);
   const [currentPage, setCurrentPage] = useState(POKE_API);
   const [nextPage, setNextPage] = useState();
@@ -21,9 +21,8 @@ const PokemonList = (props) => {
       setLoading(false)
       setNextPage(response.data.next)
       setPrevPage(response.data.previous)
-      setPokemon(response.data.results.map(p =>  p.name))
+      setPokemon(response.data.results)
     })
-
     return() => cancel()
   }, [currentPage])
 
@@ -36,9 +35,19 @@ const PokemonList = (props) => {
     setCurrentPage(prevPage)
   }
 
+  const pokemonTile = pokemon.map(pokemon => {
+    return(
+      <PokemonTile
+      key={pokemon.url}
+        name={pokemon.name}
+        url={pokemon.url}
+      />
+    )
+  })
+
   return(
-    <div>
-      <PokemonTile pokemon={pokemon} />
+    <div className="sprite-alignment">
+      {pokemonTile}
       <Pagination
         next={nextPage ? loadNextPage : null}
         previous={prevPage ? loadPreviousPage : null}
