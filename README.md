@@ -1,4 +1,4 @@
-## Devadex
+## Pokedex
 
 A pokedex work-in-progress using the https://pokeapi.co/
 
