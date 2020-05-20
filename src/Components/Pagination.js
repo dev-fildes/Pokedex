@@ -6,7 +6,7 @@ export default function Pagination({ next, previous }) {
     <div>
     {previous &&
       <button onClick={previous}>
-      Prev
+      Previous
       </button>}
 
       {next && <button onClick={next}>
