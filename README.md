@@ -10,3 +10,5 @@ A pokedex work-in-progress using the https://pokeapi.co/
 
 ## WIP Notes
 * Working on displaying errors
+* Live Search Update
+* Configure CSS
